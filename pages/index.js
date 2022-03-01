@@ -1,21 +1,28 @@
+import { Flex, Button } from '@chakra-ui/react'
+import { LogoIcon } from '@/styles/icons'
 import { useAuth } from '@/lib/auth'
-import { db } from '@/lib/firebase'
-import { Button, Heading, Text } from '@chakra-ui/react'
+import EmptyState from '@/components/EmptyState'
 
 export default function Home() {
-  const auth = useAuth()
-
+  const { signinWithGithub, currentUser } = useAuth()
   return (
-    <div>
-      <main>
-        <Heading>Fast Feedback</Heading>
-        <Text>Current User: {auth.user ? auth.user.email : 'None'}</Text>
-        {auth.user ? (
-          <Button onClick={() => auth.signout()}>Sign Out</Button>
-        ) : (
-          <Button onClick={() => auth.signinWithGithub()}>Sign In</Button>
-        )}
-      </main>
-    </div>
+    <Flex
+      as="main"
+      direction="column"
+      align="center"
+      justify="center"
+      minW="300px"
+      h="100vh"
+    >
+      <LogoIcon boxSize={16} />
+      {currentUser ? (
+        <EmptyState />
+      ) : (
+        // <Button onClick={() => auth.signout()}>Sign Out</Button>
+        <Button mt={48} size="sm" onClick={() => signinWithGithub()}>
+          Sign In
+        </Button>
+      )}
+    </Flex>
   )
 }

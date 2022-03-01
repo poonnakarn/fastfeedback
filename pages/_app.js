@@ -1,16 +1,16 @@
-import { AuthProvider } from '@/lib/auth'
 import { ChakraProvider } from '@chakra-ui/react'
 
 import theme from '@/styles/theme'
 import '@/styles/styles.css'
+import AuthContextProvider from '@/lib/auth'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider theme={theme}>
-      <AuthProvider>
+    <AuthContextProvider>
+      <ChakraProvider theme={theme}>
         <Component {...pageProps} />
-      </AuthProvider>
-    </ChakraProvider>
+      </ChakraProvider>
+    </AuthContextProvider>
   )
 }
 
