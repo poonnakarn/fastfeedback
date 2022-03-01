@@ -1,14 +1,16 @@
-import { AuthProvider } from '../lib/auth'
-import { db } from '../lib/firebase'
-import '../styles/globals.css'
+import { AuthProvider } from '@/lib/auth'
+import { ChakraProvider } from '@chakra-ui/react'
+
+import theme from '@/styles/theme'
+import '@/styles/styles.css'
 
 function MyApp({ Component, pageProps }) {
-  console.log(db)
-
   return (
-    <AuthProvider>
-      <Component {...pageProps} />
-    </AuthProvider>
+    <ChakraProvider theme={theme}>
+      <AuthProvider>
+        <Component {...pageProps} />
+      </AuthProvider>
+    </ChakraProvider>
   )
 }
 
