@@ -15,10 +15,12 @@ import {
   useDisclosure,
   useToast,
 } from '@chakra-ui/react'
+import { mutate } from 'swr'
+
 import { createSite } from '@/lib/db'
 import { useAuth } from '@/lib/auth'
 
-const AddSiteModal = () => {
+const AddSiteModal = ({ children }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { currentUser } = useAuth()
 
@@ -32,11 +34,11 @@ const AddSiteModal = () => {
     formState: { errors },
   } = useForm()
 
-  const onSubmit = ({ site, url }) => {
+  const onSubmit = ({ name, url }) => {
     createSite({
       authorId: currentUser.uid,
       createdAt: new Date().toISOString(),
-      site,
+      name,
       url,
     })
     toast({
@@ -51,8 +53,18 @@ const AddSiteModal = () => {
 
   return (
     <>
-      <Button variant='solid' size='md' fontWeight='medium' onClick={onOpen}>
-        Add Your First Document
+      <Button
+        backgroundColor='gray.900'
+        color='white'
+        fontWeight='medium'
+        _hover={{ bg: 'gray.700' }}
+        _active={{
+          bg: 'gray.800',
+          transform: 'scale(0.95)',
+        }}
+        onClick={onOpen}
+      >
+        {children}
       </Button>
 
       <Modal initialFocusRef={initialRef} isOpen={isOpen} onClose={onClose}>
@@ -65,7 +77,7 @@ const AddSiteModal = () => {
               <FormLabel ref={initialRef}>Name</FormLabel>
               <Input
                 placeholder='My site'
-                {...register('site', { required: true })}
+                {...register('name', { required: true })}
               />
             </FormControl>
 

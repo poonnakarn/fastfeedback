@@ -12,7 +12,7 @@ import {
 
 const SkeletonRow = ({ width }) => (
   <Tr
-    backgroundColor='gray.50'
+    backgroundColor='white'
     borderTopLeftRadius={8}
     borderTopRightRadius={8}
     borderBottom='1px solid'
@@ -39,7 +39,7 @@ const SiteTableSkeleton = () => {
   return (
     <Table
       textAlign='left'
-      backgroundColor='white'
+      backgroundColor='gray.50'
       w='100%'
       ml={0}
       mr={0}

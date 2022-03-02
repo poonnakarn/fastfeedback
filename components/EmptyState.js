@@ -8,7 +8,7 @@ const EmptyState = () => (
       {"You haven't added any works."}
     </Heading>
     <Text>{"Welcome 👋🏻 Let's get started."}</Text>
-    <AddSiteModal />
+    <AddSiteModal>Add Your First Site</AddSiteModal>
   </VStack>
 )
 
