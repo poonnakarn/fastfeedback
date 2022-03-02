@@ -1,12 +1,14 @@
+import DashboardShell from '@/components/DashboardShell'
 import EmptyState from '@/components/EmptyState'
+import SiteTableSkeleton from '@/components/SiteTableSkeleton'
 import { useAuth } from '@/lib/auth'
 function DashBoard() {
   const { currentUser } = useAuth()
 
-  if (!currentUser) {
-    return 'Loading...'
-  }
-
-  return <EmptyState />
+  return (
+    <DashboardShell>
+      {!currentUser ? <SiteTableSkeleton /> : <EmptyState />}
+    </DashboardShell>
+  )
 }
 export default DashBoard

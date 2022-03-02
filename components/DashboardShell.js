@@ -14,7 +14,6 @@ import { useAuth } from '@/lib/auth'
 
 const DashboardShell = ({ children }) => {
   const { currentUser } = useAuth()
-  console.log(currentUser)
 
   return (
     <Flex flexDirection='column' h='100vh'>
@@ -31,8 +30,8 @@ const DashboardShell = ({ children }) => {
           <Link>Sites</Link>
         </HStack>
         <HStack alignItems='center' justifyContent='center' spacing={4}>
-          <Link>{currentUser.name}</Link>
-          <Avatar size='sm' src={currentUser.photoUrl} />
+          <Link>{currentUser?.name}</Link>
+          <Avatar size='sm' src={currentUser?.photoUrl} />
         </HStack>
       </Flex>
       <Flex
