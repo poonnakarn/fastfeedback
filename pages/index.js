@@ -7,19 +7,21 @@ export default function Home() {
   const { signinWithGithub, currentUser } = useAuth()
   return (
     <Flex
-      as="main"
-      direction="column"
-      align="center"
-      justify="center"
-      minW="300px"
-      h="100vh"
+      as='main'
+      direction='column'
+      align='center'
+      justify='center'
+      minW='300px'
+      h='100vh'
     >
       <LogoIcon boxSize={16} />
       {currentUser ? (
-        <EmptyState />
+        <Button size='sm' onClick={() => {}}>
+          View Dashboard
+        </Button>
       ) : (
         // <Button onClick={() => auth.signout()}>Sign Out</Button>
-        <Button mt={48} size="sm" onClick={() => signinWithGithub()}>
+        <Button size='sm' onClick={() => signinWithGithub()}>
           Sign In
         </Button>
       )}
