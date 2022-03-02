@@ -13,7 +13,7 @@ const EmptyState = () => (
       spacing={4}
     >
       <Heading as='h2' size='md'>
-        You haven't added any works.
+        {"You haven't added any works."}
       </Heading>
       <Text>{"Welcome 👋🏻 Let's get started."}</Text>
       <AddSiteModal />
