@@ -15,7 +15,7 @@ const EmptyState = () => (
       <Heading as='h2' size='md'>
         You haven't added any works.
       </Heading>
-      <Text>Welcome 👋🏻 Let's get started.</Text>
+      <Text>{"Welcome 👋🏻 Let's get started."}</Text>
       <AddSiteModal />
     </VStack>
   </DashboardShell>
