@@ -10,6 +10,8 @@ function DashBoard() {
   const { currentUser } = useAuth()
   const { data, error } = useSWR('/api/sites', fetcher)
 
+  console.log(data)
+
   if (!data) {
     return (
       <DashboardShell>

@@ -33,14 +33,14 @@ const DashboardShell = ({ children }) => {
           <Link>Sites</Link>
         </HStack>
         <HStack alignItems='center' justifyContent='center' spacing={4}>
-          <Link>{currentUser?.name}</Link>
+          <Link>Logout</Link>
           <Avatar size='sm' src={currentUser?.photoUrl} />
         </HStack>
       </Flex>
       <Flex
         flexDirection='column'
         backgroundColor='gray.100'
-        alignItems='flex-start'
+        alignItems='center'
         h='100%'
         p={8}
       >

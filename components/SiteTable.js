@@ -27,7 +27,7 @@ const SiteTable = ({ sites }) => {
             // borderBottom='1px solid'
             borderBottomColor='gray.200'
             height='40px'
-            key={site.id}
+            key={site.url}
           >
             <Td fontWeight='medium'>{site.name}</Td>
             <Td>{site.url}</Td>

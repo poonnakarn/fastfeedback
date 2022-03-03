@@ -16,7 +16,7 @@ export default function Home() {
     >
       <LogoIcon boxSize={16} />
       {currentUser ? (
-        <Button size='sm' onClick={() => {}}>
+        <Button size='sm' as='a' href='/dashboard'>
           View Dashboard
         </Button>
       ) : (

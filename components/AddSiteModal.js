@@ -31,16 +31,19 @@ const AddSiteModal = ({ children }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm()
 
   const onSubmit = ({ name, url }) => {
-    createSite({
+    const newSite = {
       authorId: currentUser.uid,
       createdAt: new Date().toISOString(),
       name,
       url,
-    })
+    }
+    createSite(newSite)
+    reset()
     toast({
       title: `Success`,
       description: `We've added your site.`,
@@ -48,6 +51,13 @@ const AddSiteModal = ({ children }) => {
       isClosable: true,
       duration: 5000,
     })
+    mutate(
+      '/api/sites',
+      async (data) => ({
+        sites: [...data.sites, newSite],
+      }),
+      false
+    )
     onClose()
   }
 
