@@ -8,7 +8,7 @@ import SiteTable from '@/components/SiteTable'
 
 function DashBoard() {
   const { currentUser } = useAuth()
-  const { data, error } = useSWR('/api/sites', fetcher)
+  const { data, error } = useSWR('/api/sites', fetcher) // api returns { sites: [sites] }
 
   console.log(data)
 
