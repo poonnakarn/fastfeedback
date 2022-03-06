@@ -36,6 +36,7 @@ export default function Home() {
   )
 }
 
+// redirect if logged in
 export async function getServerSideProps(context) {
   const cookies = parseCookies(context)
 
