@@ -3,20 +3,23 @@ import { theme as base, extendTheme } from '@chakra-ui/react'
 const theme = extendTheme({
   fonts: {
     heading: `Montserrat, ${base.fonts?.heading}`,
-    body: `Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`
+    body: `Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
   },
   fontWeights: {
     normal: 400,
     medium: 600,
-    bold: 700
+    bold: 700,
   },
   styles: {
     global: {
       html: {
-        minWidth: '360px'
-      }
-    }
-  }
+        minWidth: '360px',
+      },
+      body: {
+        bg: '#edf2f7',
+      },
+    },
+  },
 })
 
 export default theme

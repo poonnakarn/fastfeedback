@@ -26,7 +26,11 @@ function DashBoard() {
   return (
     <DashboardShell>
       <SiteTableHeader />
-      {data.sites ? <SiteTable sites={data.sites} /> : <EmptyState />}
+      {data.sites.length > 0 ? (
+        <SiteTable sites={data.sites} />
+      ) : (
+        <EmptyState />
+      )}
     </DashboardShell>
   )
 }
