@@ -13,8 +13,6 @@ function DashBoard() {
     fetcher
   ) // api returns { sites: [sites] }
 
-  console.log(data)
-
   if (!data) {
     return (
       <DashboardShell>

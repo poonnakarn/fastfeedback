@@ -16,7 +16,7 @@ import { useAuth } from '@/lib/auth'
 import AddSiteModal from './AddSiteModal'
 
 const DashboardShell = ({ children }) => {
-  const { currentUser } = useAuth()
+  const { currentUser, logOut } = useAuth()
 
   return (
     <Box h='100vh' backgroundColor='gray.100'>
@@ -33,7 +33,7 @@ const DashboardShell = ({ children }) => {
           <Link>Sites</Link>
         </HStack>
         <HStack alignItems='center' justifyContent='center' spacing={4}>
-          <Link>Logout</Link>
+          <Link onClick={logOut}>Log Out</Link>
           <Avatar size='sm' src={currentUser?.photoUrl} />
         </HStack>
       </Flex>
