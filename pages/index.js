@@ -5,7 +5,6 @@ import { parseCookies } from 'nookies'
 import { GitHubIcon, GoogleIcon, LogoIcon } from '@/styles/icons'
 import { useAuth } from '@/lib/auth'
 
-// pull request
 export default function Home() {
   const { signinWithGithub, signInWithGoogle, currentUser } = useAuth()
   return (
