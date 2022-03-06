@@ -1,4 +1,5 @@
 import React from 'react'
+import NextLink from 'next/link'
 import { Flex, HStack, Link, Avatar, Box } from '@chakra-ui/react'
 import { LogoIcon } from '@/styles/icons'
 import { useAuth } from '@/lib/auth'
@@ -16,9 +17,15 @@ const DashboardShell = ({ children }) => {
         backgroundColor='white'
       >
         <HStack spacing={4}>
-          <LogoIcon boxSize={8} />
-          <Link>MDCUHub</Link>
-          <Link>Sites</Link>
+          <NextLink href='/'>
+            <LogoIcon boxSize={8} style={{ cursor: 'pointer' }} />
+          </NextLink>
+          <NextLink href='/dashboard' passHref>
+            <Link>Sites</Link>
+          </NextLink>
+          <NextLink href='/feedback' passHref>
+            <Link>Feedback</Link>
+          </NextLink>
         </HStack>
         <HStack alignItems='center' justifyContent='center' spacing={4}>
           <Link onClick={logOut}>Log Out</Link>
